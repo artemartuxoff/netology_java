@@ -12,7 +12,7 @@ public class Main {
     public static int taxIncomeMinusExpenses(int income, int expenses) {
         int tax = (income - expenses) * TAX_INCOME_EXPENSES / 100;
 
-        return tax = Math.max(tax, 0);
+        return Math.max(tax, 0);
     }
 
     static void systemSelection(String taxSystem, int recommendedTax, int alternativeTax) {
