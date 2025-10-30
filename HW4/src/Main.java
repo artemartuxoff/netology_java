@@ -12,24 +12,21 @@ public class Main {
     public static int taxIncomeMinusExpenses(int income, int expenses) {
         int tax = (income - expenses) * TAX_INCOME_EXPENSES / 100;
 
-        if (tax < 0) {
-            tax = 0;
-        }
-        return tax;
+        return tax = Math.max(tax, 0);
     }
 
-    static void systemSelection(String taxSystem, int firstUsn, int secUsn) {
+    static void systemSelection(String taxSystem, int recommendedTax, int alternativeTax) {
 
         System.out.println();
 
-        if (firstUsn == secUsn) {
+        if (recommendedTax == alternativeTax) {
             System.out.println(taxSystem);
         } else {
 
             System.out.println("Мы советуем вам " + taxSystem);
-            System.out.println("Ваш налог составит: " + firstUsn + " рублей");
-            System.out.println("Налог на другой системе: " + secUsn + " рублей");
-            System.out.println("Экономия: " + (secUsn - firstUsn) + " рублей");
+            System.out.println("Ваш налог составит: " + recommendedTax + " рублей");
+            System.out.println("Налог на другой системе: " + alternativeTax + " рублей");
+            System.out.println("Экономия: " + (alternativeTax - recommendedTax) + " рублей");
 
         }
         System.out.println();
