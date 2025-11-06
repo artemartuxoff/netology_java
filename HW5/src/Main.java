@@ -13,7 +13,6 @@ public class Main {
         System.out.println("Содержится ли в описании книги слово 'Лев': " + ((book1.matches("Лев"))?"да":"нет"));
         System.out.println("Оценка стоимости книги: " + book1.estimatePrice());
 
-        //разделитель
         System.out.println();
 
         //пример книга №2
