@@ -13,7 +13,7 @@ public class Main{
         costPerAddress.put(new Address("Япония", "Токио"), 1000);
         costPerAddress.put(new Address("Германия", "Берлин"), 900);
 
-        HashSet<Address> setAddress = new HashSet<>();
+        HashSet<String> setCountry = new HashSet<>();
 
         int sumCostPer = 0;
         Scanner scanner = new Scanner(System.in);
@@ -34,11 +34,13 @@ public class Main{
             System.out.print("Введите вес (кг): ");
             int inputWeight = Integer.parseInt(scanner.nextLine());
 
-            if (costPerAddress.containsKey(new Address(inputCountry,inputCity))) {
+            Address inputAddress = new Address(inputCountry,inputCity);
 
-                setAddress.add(new Address(inputCountry,inputCity));
+            if (costPerAddress.containsKey(inputAddress)) {
 
-                int price = costPerAddress.get(new Address(inputCountry, inputCity));
+                setCountry.add(inputCountry);
+
+                int price = costPerAddress.get(inputAddress);
 
                 int cost = inputWeight*price;
 
@@ -46,7 +48,7 @@ public class Main{
 
                 System.out.printf("Стоимость доставки составит: %d руб.%n",cost);
                 System.out.printf("Общая стоимость всех доставок: %d руб.%n",sumCostPer);
-                System.out.printf("Количество стран: %d.%n",setAddress.size());
+                System.out.printf("Количество стран: %d.%n",setCountry.size());
                 System.out.println();
             }
             else{
